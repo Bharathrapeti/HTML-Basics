@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Registration Form</title>
+</head>
+<body>
+
+    <h1>Professional Registration Form</h1>
+    <hr>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend><b>Personal Information</b></legend>
+
+            <label>First Name:</label><br>
+            <input type="text" name="firstname" required><br><br>
+
+            <label>Middle Name:</label><br>
+            <input type="text" name="middlename"><br><br>
+
+            <label>Last Name:</label><br>
+            <input type="text" name="lastname" required><br><br>
+
+            <label>Profile Photo:</label><br>
+            <input type="file" name="photo"><br><br>
+
+            <label>Date of Birth:</label><br>
+            <input type="date" name="dob"><br><br>
+
+            <label>Age:</label><br>
+            <input type="number" name="age" min="18" max="100"><br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <input type="radio" name="gender"> Other
+            <br><br>
+
+            <label>Blood Group:</label><br>
+            <select>
+                <option>Select</option>
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Contact Information</b></legend>
+
+            <label>Email Address:</label><br>
+            <input type="email" name="email" required><br><br>
+
+            <label>Phone Number:</label><br>
+            <input type="tel" name="phone"><br><br>
+
+            <label>Alternate Phone:</label><br>
+            <input type="tel" name="altphone"><br><br>
+
+            <label>Website:</label><br>
+            <input type="url" name="website"><br><br>
+
+            <label>Address:</label><br>
+            <textarea rows="4" cols="40"></textarea><br><br>
+
+            <label>City:</label><br>
+            <input type="text"><br><br>
+
+            <label>State:</label><br>
+            <input type="text"><br><br>
+
+            <label>Country:</label><br>
+            <input type="text"><br><br>
+
+            <label>ZIP / PIN Code:</label><br>
+            <input type="text"><br><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Educational Information</b></legend>
+
+            <label>College Name:</label><br>
+            <input type="text"><br><br>
+
+            <label>University:</label><br>
+            <input type="text"><br><br>
+
+            <label>Course:</label><br>
+            <select>
+                <option>Select Course</option>
+                <option>B.E</option>
+                <option>B.Tech</option>
+                <option>B.Sc</option>
+                <option>BCA</option>
+                <option>M.Tech</option>
+            </select><br><br>
+
+            <label>Branch:</label><br>
+            <input type="text"><br><br>
+
+            <label>Year of Study:</label><br>
+            <select>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select><br><br>
+
+            <label>CGPA:</label><br>
+            <input type="number" step="0.01" min="0" max="10"><br><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Professional Information</b></legend>
+
+            <label>Occupation:</label><br>
+            <input type="text"><br><br>
+
+            <label>Company Name:</label><br>
+            <input type="text"><br><br>
+
+            <label>Experience (Years):</label><br>
+            <input type="number"><br><br>
+
+            <label>Skills:</label><br>
+            <input type="checkbox"> HTML
+            <input type="checkbox"> CSS
+            <input type="checkbox"> JavaScript
+            <input type="checkbox"> Python
+            <input type="checkbox"> Java
+            <input type="checkbox"> C++
+            <br><br>
+
+            <label>Resume:</label><br>
+            <input type="file"><br><br>
+
+            <label>LinkedIn Profile:</label><br>
+            <input type="url"><br><br>
+
+            <label>GitHub Profile:</label><br>
+            <input type="url"><br><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Account Details</b></legend>
+
+            <label>Username:</label><br>
+            <input type="text"><br><br>
+
+            <label>Password:</label><br>
+            <input type="password"><br><br>
+
+            <label>Confirm Password:</label><br>
+            <input type="password"><br><br>
+
+            <label>Security Question:</label><br>
+            <select>
+                <option>Select Question</option>
+                <option>What is your pet's name?</option>
+                <option>What is your favorite teacher?</option>
+                <option>What is your birthplace?</option>
+            </select><br><br>
+
+            <label>Answer:</label><br>
+            <input type="text"><br><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend><b>Additional Information</b></legend>
+
+            <label>Favorite Color:</label><br>
+            <input type="color"><br><br>
+
+            <label>Expected Salary:</label><br>
+            <input type="range" min="10000" max="200000"><br><br>
+
+            <label>Available Joining Date:</label><br>
+            <input type="date"><br><br>
+
+            <label>Preferred Interview Time:</label><br>
+            <input type="time"><br><br>
+
+            <label>Comments:</label><br>
+            <textarea rows="5" cols="40"></textarea><br><br>
+
+            <input type="checkbox" required>
+            I agree to the Terms & Conditions.
+
+        </fieldset>
+
+        <br>
+
+        <center>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear Form">
+        </center>
+
+    </form>
+
+</body>
+</html>
