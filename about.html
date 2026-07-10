@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Bharath Rapeti</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Section */
+        .about-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .about-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Main About Content */
+        .about-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+            align-items: center;
+        }
+
+        .about-photo-section {
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 8px solid white;
+            object-fit: cover;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            display: inline-block;
+        }
+
+        .about-text-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #00d4ff;
+            padding-bottom: 1rem;
+        }
+
+        .about-text-section p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Experience & Education */
+        .timeline-section {
+            margin: 4rem 0;
+        }
+
+        .timeline-section h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #00d4ff;
+            padding-bottom: 1rem;
+        }
+
+        .timeline {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .timeline-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content .year {
+            color: #00d4ff;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Skills Grid */
+        .skills-section {
+            margin: 4rem 0;
+        }
+
+        .skills-section h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #00d4ff;
+            padding-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-name {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+            background: #eee;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #00d4ff 100%);
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #667eea;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .social-icon img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            background-color: #00d4ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-main {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">BR</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Header -->
+    <div class="container">
+        <section class="about-header">
+            <h1>About Me</h1>
+            <p>Passionate Developer | Creative Problem Solver | Tech Enthusiast</p>
+        </section>
+
+        <!-- Main About Content -->
+        <section class="about-main">
+            <div class="about-photo-section">
+                <img src="photo.jpg" alt="Bharath Rapeti" class="profile-photo" onerror="this.style.display='none'">
+            </div>
+            <div class="about-text-section">
+                <h2>Bharath Rapeti</h2>
+                <p>Hi! I'm a dedicated Full Stack Web Developer with a passion for creating beautiful, functional, and user-centric digital experiences. With expertise in modern web technologies and a keen eye for design, I transform complex ideas into elegant solutions.</p>
+                <p>I believe in continuous learning and staying updated with the latest industry trends. My journey in web development has equipped me with strong problem-solving skills and the ability to work collaboratively in fast-paced environments.</p>
+                <p>When I'm not coding, you'll find me exploring new design trends, contributing to open-source projects, or mentoring aspiring developers in the community.</p>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Dedication</div>
+            </div>
+        </section>
+
+        <!-- Experience & Education -->
+        <section class="timeline-section">
+            <h2>Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">💼</div>
+                    <div class="timeline-content">
+                        <h3>Senior Web Developer</h3>
+                        <div class="year">2022 - Present</div>
+                        <p>Leading web development projects, mentoring junior developers, and architecting scalable solutions for enterprise clients.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">💼</div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer</h3>
+                        <div class="year">2020 - 2022</div>
+                        <p>Developed and maintained multiple web applications, working with React, Node.js, and various database technologies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">🎓</div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Technology in Computer Science</h3>
+                        <div class="year">2018 - 2022</div>
+                        <p>Graduated with honors. Specialized in Web Development and Software Engineering. Participated in multiple hackathons and tech competitions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">🏆</div>
+                    <div class="timeline-content">
+                        <h3>Professional Certifications</h3>
+                        <div class="year">2019 - 2023</div>
+                        <p>AWS Certified Solutions Architect, Google Cloud Professional, and Advanced JavaScript Developer Certification.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name">HTML5 & CSS3</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">React.js</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Vue.js</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 87%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 82%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">MongoDB</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 86%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">AWS</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Git & GitHub</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Docker</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 78%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Figma</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 84%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 83%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/Bharathrapeti" title="GitHub" class="social-icon" target="_blank">
+                <img src="git.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/bharath-rapeti-237624340/" title="LinkedIn" class="social-icon" target="_blank">
+                <img src="in.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/bharath.__raj_/" title="Instagram" class="social-icon" target="_blank">
+                <img src="insta.png" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; 2026 Bharath Rapeti. All rights reserved.</p>
+    </footer>
+</body>
+</html>
