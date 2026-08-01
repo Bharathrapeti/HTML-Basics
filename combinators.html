@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Combinators</title>
+
+    <link rel="stylesheet" href="../CSS-Basics/combinators.css">
+</head>
+<body>
+
+<h1>CSS Combinators Examples</h1>
+
+<!-- Descendant Selector -->
+<h2>1. Descendant Selector (space)</h2>
+
+<div class="descendant">
+    <p>This paragraph is inside div.</p>
+
+    <section>
+        <p>This paragraph is inside section inside div.</p>
+    </section>
+</div>
+
+<hr>
+
+<!-- Child Selector -->
+<h2>2. Child Selector (>)</h2>
+
+<div class="child">
+    <p>Direct Child Paragraph</p>
+
+    <section>
+        <p>This paragraph is NOT a direct child.</p>
+    </section>
+</div>
+
+<hr>
+
+<!-- Adjacent Sibling -->
+<h2>3. Adjacent Sibling Selector (+)</h2>
+
+<div>
+    First Div
+</div>
+
+<p>This paragraph comes immediately after the div.</p>
+
+<p>This paragraph is not selected.</p>
+
+<hr>
+
+<!-- General Sibling -->
+<h2>4. General Sibling Selector (~)</h2>
+
+<div class="general">
+    General Sibling Example
+</div>
+
+<p>Paragraph 1</p>
+
+<p>Paragraph 2</p>
+
+<p>Paragraph 3</p>
+
+</body>
+</html>
